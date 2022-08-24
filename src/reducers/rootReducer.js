@@ -27,6 +27,12 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
+        case 'ADD_STUDENT':
+            initialState.students.push(action.payload)
+            return {
+                ...state,
+                students: [...initialState.students],
+            }
         case 'RESET_STUDENTS':
             return {
                 students: initialState.students,
