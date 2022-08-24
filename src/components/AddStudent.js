@@ -11,6 +11,8 @@ const AddStudent = () => {
             type: 'ADD_STUDENT',
             payload: { name: studentName, img: studentImg },
         })
+        setStudentName('')
+        setStudentImg('')
     }
     return (
         <form>
@@ -18,16 +20,18 @@ const AddStudent = () => {
                 type='text'
                 name='student-name'
                 placeholder='Enter Name'
+                value={studentName}
                 onChange={e => setStudentName(e.target.value)}
             />
             <input
                 type='text'
                 name='student-img'
                 placeholder='Image URL'
+                value={studentImg}
                 onChange={e => setStudentImg(e.target.value)}
             />
-            <button type='submit' onClick={handleClick}>
-                Submit
+            <button className='button-24' type='submit' onClick={handleClick}>
+                +
             </button>
         </form>
     )

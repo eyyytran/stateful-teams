@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux'
 export default function Student({ student }) {
     const dispatch = useDispatch()
-    const frontEndTeam = useSelector(state => state.frontEndTeam)
-    const backEndTeam = useSelector(state => state.backEndTeam)
+    const frontEndTeam = useSelector(state => state.students.frontEndTeam)
+    const backEndTeam = useSelector(state => state.students.backEndTeam)
     const isFEBtnDisabled = Boolean(
         frontEndTeam.find(teammember => teammember.name === student.name)
     )

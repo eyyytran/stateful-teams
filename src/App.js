@@ -1,12 +1,11 @@
 import './App.css'
 import MainContainer from './components/MainContainer'
 
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import AddStudent from './components/AddStudent'
 
 function App() {
     const dispatch = useDispatch()
-    const students = useSelector(state => state.students)
     return (
         <div className='topcontainer'>
             <h1>Student Team React Challenge</h1>
@@ -18,7 +17,7 @@ function App() {
                 Reset
             </button>
             <div className='App'>
-                <MainContainer students={students} />
+                <MainContainer />
             </div>
         </div>
     )

@@ -69,3 +69,14 @@
 .button-24:disabled {
     display: none;
 }
+
+input {
+    height: 35px;
+    width: 200px;
+    margin: 3px;
+    border-radius: 10px;
+}
+
+form {
+    margin-bottom: 15px;
+}
