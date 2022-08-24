@@ -28,7 +28,7 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_STUDENT':
-            initialState.students.push(action.payload)
+            initialState.students.splice(0, 0, action.payload)
             return {
                 ...state,
                 students: [...initialState.students],
