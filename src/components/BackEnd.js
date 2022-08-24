@@ -7,7 +7,7 @@ export default function BackEnd() {
         <div className='binarybots'>
             <h1>BackEnd</h1>
             {backEndTeam.map(teammember => {
-                return <Student student={teammember} />
+                return <Student key={teammember.name} student={teammember} />
             })}
         </div>
     )

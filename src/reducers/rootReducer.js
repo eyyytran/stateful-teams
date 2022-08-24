@@ -28,36 +28,29 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'RESET_STUDENTS':
-            console.log(initialState.students)
             return {
                 students: initialState.students,
                 frontEndTeam: initialState.frontEndTeam,
                 backEndTeam: initialState.backEndTeam,
             }
         case 'TO_FRONTEND':
-            state.students = state.students.filter(
-                student => student.name !== action.payload.name
-            )
-            state.backEndTeam = state.backEndTeam.filter(
-                student => student.name !== action.payload.name
-            )
-            console.log(initialState.students)
             return {
-                ...state,
+                backEndTeam: state.backEndTeam.filter(
+                    student => student.name !== action.payload.name
+                ),
                 frontEndTeam: [...state.frontEndTeam, action.payload],
-                students: state.students,
+                students: state.students.filter(
+                    student => student.name !== action.payload.name
+                ),
             }
         case 'TO_BACKEND':
-            state.students = state.students.filter(
-                student => student.name !== action.payload.name
-            )
-            state.frontEndTeam = state.frontEndTeam.filter(
-                student => student.name !== action.payload.name
-            )
-            console.log(initialState.students)
             return {
-                students: state.students,
-                frontEndTeam: state.frontEndTeam,
+                students: state.students.filter(
+                    student => student.name !== action.payload.name
+                ),
+                frontEndTeam: state.frontEndTeam.filter(
+                    student => student.name !== action.payload.name
+                ),
                 backEndTeam: [...state.backEndTeam, action.payload],
             }
         default:

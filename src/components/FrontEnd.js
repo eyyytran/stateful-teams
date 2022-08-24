@@ -7,7 +7,7 @@ export default function FrontEnd() {
         <div className='bc-crew'>
             <h1>FrontEnd</h1>
             {frontEndTeam.map(teammember => {
-                return <Student student={teammember} />
+                return <Student key={teammember.name} student={teammember} />
             })}
         </div>
     )

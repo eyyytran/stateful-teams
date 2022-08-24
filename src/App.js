@@ -2,6 +2,7 @@ import './App.css'
 import MainContainer from './components/MainContainer'
 
 import { useSelector, useDispatch } from 'react-redux'
+import AddStudent from './components/AddStudent'
 
 function App() {
     const dispatch = useDispatch()
@@ -9,6 +10,7 @@ function App() {
     return (
         <div className='topcontainer'>
             <h1>Student Team React Challenge</h1>
+            <AddStudent />
             <button
                 className='button-24'
                 onClick={() => dispatch({ type: 'RESET_STUDENTS' })}
